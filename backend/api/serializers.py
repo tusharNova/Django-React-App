@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
-
 from rest_framework import serializers
+from .models import Note
 
 
 
@@ -17,4 +17,6 @@ class UserSerializer(serializers.ModelSerializer):
     
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
-        pass
+        model = Note
+        fields = ['__all__']
+        extra_Kwargs = {"author" :{"write_only": True}}
