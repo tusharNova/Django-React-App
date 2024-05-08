@@ -10,8 +10,8 @@ function ProtectedRoute({ children }) {
     const [isAutherized, setIsAutherized] = useState(null);
 
     useEffect(() =>{
-        auth.catch(() => setIsAutherized(false))
-    }, [])
+        auth.catch( () => setIsAutherized(false))
+    }, []);
 
 
     const refreshToken = async () => {
